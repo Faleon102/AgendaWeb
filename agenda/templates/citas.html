@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estilos/default.css') }}">
+    </head>
+    <body>
+        <nav>
+            <a href="contactos">Contactos</a>
+            <a href="citas">Citas</a>
+            <a href="usuarios">Usuarios</a>
+        </nav>
+        <table border='1'>
+            <thead>
+            <tr>
+                <th rowspan="2">Usuario</th>
+                <th colspan='3'>Contacto</th>
+                <th colspan='4'>Cita</th>
+                <th colspan="2" rowspan="2">Administración</th>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Telefono</th>
+                <th>Lugar</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Descripción</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for u in citas%}
+            <tr>
+                <td>{{ u[0] }}</td>
+                <td>{{ u[1] }}</td>
+                <td>{{ u[2] }}</td>
+                <td>{{ u[3] }}</td>
+                <td>{{ u[4] }}</td>
+                <td>{{ u[5] }}</td>
+                <td>{{ u[6] }}</td>
+                <td>{{ u[7] }}</td>
+                <td><a href="/actualizar_cita?id={{ u[0] }}">Editar</a></td>
+                <td><a href="/eliminar_cita?id={{ u[0] }}">Eliminar</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <a href="/agregar_cita">Agregar</a>
+    </body>
+
+</html>

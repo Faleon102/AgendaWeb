@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Agregar Contacto</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estilos/default.css') }}">
+    </head>
+    <body>
+        <nav>
+            <a href="contactos">Contactos</a>
+            <a href="citas">Citas</a>
+            <a href="usuarios">Usuarios</a>
+        </nav>
+        <form action="{{ request.path }}" method="POST">
+            <label for="id_cont">Id del Usuario: </label>
+            <input type="text" id="id_cont" name="id_cont"/><br>
+            <label for="nombre">Nombre: </label>
+            <input type="text" id="nombre" name="nombre"/><br>
+            <label for="apellido">Apellido: </label>
+            <input type="text" id="apellido" name="apellido"/><br>
+            <label for="direccion">Direccion: </label>
+            <input type="text" id="direccion" name="direccion"/><br>
+            <label for="telefono">Telefono: </label>
+            <input type="text" id="telofono" name="telefono"/><br>
+            <label for="email">Email: </label>
+            <input type="text" id="email" name="email"/><br>
+            <input type="submit" value="Enviar">
+        </form>
+    </body>
+</html>

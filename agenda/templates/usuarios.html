@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estilos/default.css') }}">
+    </head>
+    <body>
+        <nav>
+            <a href="contactos">Contactos</a>
+            <a href="citas">Citas</a>
+            <a href="usuarios">Usuarios</a>
+        </nav>
+        <table>
+            <tr>
+                <th>Usuario</th>
+                <th>Acciones</th>
+            </tr>
+            {% for u in usuarios%}
+            <tr>
+                <td>{{ u[1] }}</td>
+                <td> 
+                    <a href="/actualizar_usuario?id={{ u[0] }}">Editar</a> 
+                    <a href="/eliminar_usuario?id={{ u[0] }}">Eliminar</a> 
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/agregar_usuario">Agregar</a>
+    </body>
+
+</html>

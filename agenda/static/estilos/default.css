@@ -1,0 +1,57 @@
+body {
+  color: rgba(94,93,82,1);
+}
+
+a {
+  color: rgba(51,122,168,1);
+} 
+a:hover, a:focus {
+    color: rgb(165, 23, 66); 
+}
+
+table {
+  width: 100%;
+  margin-bottom: 1.5em;
+  border-spacing: 0;
+}  
+
+th {
+    background-color: rgba(29,150,178,1);
+    border: 1px solid rgba(29,150,178,1);
+    font-weight: normal;
+    text-align: center;
+    color: white;
+} 
+th:first-of-type {
+    text-align: left; 
+}
+th, td {
+    padding: .5em;
+    vertical-align: middle;
+}
+  
+caption {
+    margin-bottom: 1em;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+}
+      
+tr:nth-of-type(even) {
+    background-color: rgba(94,93,82,.1);
+}
+
+td {
+    text-align: right;
+}
+td[data-type=currency] {
+    text-align: right; 
+}
+
+td[data-title]:before {
+    content: attr(data-title);
+    float: left;
+    font-size: .8em;
+    color: rgba(94,93,82,.75);
+      
+}
